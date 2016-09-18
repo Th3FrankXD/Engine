@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{721cb83c-c4a1-49dc-82fa-7dedaaf6efd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers">
+      <UniqueIdentifier>{e290064b-dc5d-4c4e-a18a-f66bb6a5e24f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{ae4b041a-eedd-473a-a767-4a1157b38f3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{6c825f50-c39c-481d-9d25-651f8e5c7e42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{812ee9e2-5a37-4ae5-951e-36708327a323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{8b2ac15d-d6b5-4bcb-8b4c-c8b04f7f3b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{329a1ad9-5e12-4e26-bdf0-62fe4f8c0262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{055401be-8ede-465a-982e-b0dbf9cb5e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scripts">
+      <UniqueIdentifier>{4f810ecf-9b50-4920-a926-dabc33d70ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extra Functional">
+      <UniqueIdentifier>{2770988f-d1c1-4511-9f17-d2d69ec795ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extra Functional">
+      <UniqueIdentifier>{ec8a6056-4cfb-4551-9376-32f436c65d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\ComponentManagers">
+      <UniqueIdentifier>{bff8c98d-0664-47f5-b4c3-27ff1f30b346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\CoreManagers">
+      <UniqueIdentifier>{a74da8dd-98ab-434a-aab1-ff0659d077f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers\ComponentManagers">
+      <UniqueIdentifier>{de9cfec2-f107-438f-ad9f-c9772bfa8cfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers\CoreManagers">
+      <UniqueIdentifier>{0d24a5e0-81bc-4d12-a045-60902538703b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\FrameworkLib\FrameworkLib.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\FrameworkLib\resources\shaders\default_fs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="..\FrameworkLib\resources\shaders\default_vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="..\FrameworkLib\resources\shaders\spriteBatch_gs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="..\FrameworkLib\resources\shaders\spriteBatch_vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="HitboxComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="VelocityComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ExtraFunctional.cpp">
+      <Filter>Source Files\Extra Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager.cpp">
+      <Filter>Source Files\Managers\ComponentManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
+      <Filter>Source Files\Managers\CoreManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>Source Files\Managers\CoreManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformManager.cpp">
+      <Filter>Source Files\Managers\ComponentManagers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerPack.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="HitboxComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentPack.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="VelocityComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtraFunctional.h">
+      <Filter>Header Files\Extra Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerTemplate.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformManager.h">
+      <Filter>Header Files\Managers\ComponentManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentManager.h">
+      <Filter>Header Files\Managers\ComponentManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Header Files\Managers\CoreManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelManager.h">
+      <Filter>Header Files\Managers\CoreManagers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
