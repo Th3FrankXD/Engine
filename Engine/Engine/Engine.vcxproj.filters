@@ -117,6 +117,9 @@
     <ClCompile Include="HitboxManager.cpp">
       <Filter>Source Files\Managers\ComponentManagers</Filter>
     </ClCompile>
+    <ClCompile Include="JsonManager.cpp">
+      <Filter>Source Files\Managers\CoreManagers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="HitboxManager.h">
       <Filter>Header Files\Managers\ComponentManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManager.h">
+      <Filter>Header Files\Managers\CoreManagers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

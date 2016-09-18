@@ -35,6 +35,8 @@ bool Engine::IsValidHandle(const std::string & handle)
 
 bool Engine::onCreate(int a_argc, char* a_argv[])
 {
+	m_jsonManager.serializeJson("testmap.json");
+
 	strVec strvec;
 	strvec.push_back("[Player]");
 	strvec.push_back("<TRANSFORM>");

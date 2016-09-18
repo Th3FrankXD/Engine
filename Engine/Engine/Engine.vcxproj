@@ -81,7 +81,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)deps\glfw-3.1.1\include;$(SolutionDir)deps\glew-1.12.0\include;$(SolutionDir)deps\glm;$(SolutionDir)deps\glew-1.13.0\include;$(SolutionDir)FrameworkLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\rapidjson\include;$(SolutionDir)deps\glfw-3.1.1\include;$(SolutionDir)deps\glew-1.12.0\include;$(SolutionDir)deps\glm;$(SolutionDir)deps\glew-1.13.0\include;$(SolutionDir)FrameworkLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)FrameworkLib\lib\x64\Debug;$(SolutionDir)deps\glfw-3.1.1\lib-vc2015\x64\Debug;$(SolutionDir)deps\soil\lib\vs2015\x64\Debug;$(SolutionDir)deps\glew-1.12.0\lib-vc2015\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -123,6 +123,7 @@
     <ClCompile Include="ExtraFunctional.cpp" />
     <ClCompile Include="HitboxComponent.cpp" />
     <ClCompile Include="HitboxManager.cpp" />
+    <ClCompile Include="JsonManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="ExtraFunctional.h" />
     <ClInclude Include="HitboxComponent.h" />
     <ClInclude Include="HitboxManager.h" />
+    <ClInclude Include="JsonManager.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="ManagerTemplate.h" />

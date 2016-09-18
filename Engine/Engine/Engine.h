@@ -4,6 +4,7 @@
 #include "ComponentPack.h"
 #include "ManagerPack.h"
 #include <iostream>
+#include "JsonManager.h"
 
 
 class Engine : public NHTV::Application
@@ -12,6 +13,7 @@ public:
 	Engine();
 	~Engine();
 
+	JsonManager					m_jsonManager;
 	LevelManager				m_levelManager;
 	EntityManager				m_entityManager;
 	TransformManager			m_transformManager;
