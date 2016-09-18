@@ -5,7 +5,6 @@
 
 enum HitboxType
 {
-	NONE = 0,
 	DAMAGE = 1 << 0,
 	PLAYER = 1 << 1,
 	SOLID = 1 << 2

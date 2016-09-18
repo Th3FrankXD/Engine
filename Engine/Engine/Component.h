@@ -2,7 +2,7 @@
 
 
 
-class Entity;
+struct Entity;
 
 enum ComponentType
 {
