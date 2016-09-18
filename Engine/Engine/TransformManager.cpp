@@ -1,7 +1,7 @@
 #include "TransformManager.h"
 
 TransformManager::TransformManager():
-	ComponentManager("TRANSFORM")
+	ComponentManager("TRANSFORM", ComponentType::TRANSFORM)
 {
 }
 

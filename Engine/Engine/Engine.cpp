@@ -41,13 +41,7 @@ bool Engine::onCreate(int a_argc, char* a_argv[])
 	strvec.push_back("position: 0, 0");
 
 
-	m_levelManager.SetCurrentLevel( this->m_levelManager.GenerateElement(strvec));
 	
-
-	if (m_levelManager.m_currentLevel == nullptr)
-		std::cout << "m_levelManager == nullptr" << std::endl;
-	std::cout << "Entities: " << m_levelManager.m_currentLevel->m_entities.size() << std::endl;
-	std::cout << "Components: " << m_levelManager.m_currentLevel->m_components.size() << std::endl;
 
 	setBackgroundColor(NHTV::SColour(0x00, 0x00, 0x00, 0xff));
 	return true;

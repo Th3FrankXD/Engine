@@ -6,6 +6,7 @@
 struct Entity
 {
 	Entity();
+	Entity(std::string &name);
 	~Entity();
 
 	std::vector<Component*> m_pComponents;

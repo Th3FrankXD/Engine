@@ -8,12 +8,13 @@ struct EntityManager : ManagerTemplate<Entity>
 {
 	EntityManager();
 
-	void		AddElement(Entity *tElement) override;
-	void		RemoveElement(Entity *tElement) override;
-	void		CreateEntity(const std::string &entityName, unsigned componentFlags);
+	Entity*		CreateEntity(std::string &name);
+	Entity*		CreateEntity();
+
+	void		DestroyEntity(Entity *entity);
 	Entity*		GenerateElement(strVec &entityInstructions);
 	
 	
-
+	std::vector<Entity*> m_entities;
 	void OnUpdate() override;
 };

@@ -11,10 +11,9 @@ struct HitboxManager : ComponentManager
 
 	// Checking
 	bool		AreColliding(HitboxComponent* lBox, HitboxComponent* rBox);
-	void		CreateCollisionLists();
+	void		CreateCollisionLists( Level* level);
 	void		ClearCollisionLists();
 
 
 	std::map<HitboxComponent*, std::vector<HitboxComponent*>> m_collisionLists;
-
 };

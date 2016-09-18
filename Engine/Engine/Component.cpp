@@ -2,12 +2,10 @@
 
 Component::Component(ComponentType type) :
 	m_componentType(type),
-	m_deathFlag(false),
-	m_pEntity(nullptr)
+	m_deathFlag(false)
 {
 }
 
 Component::~Component()
 {
-	this->m_pEntity = nullptr;
 }

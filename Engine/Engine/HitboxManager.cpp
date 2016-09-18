@@ -1,7 +1,7 @@
 #include "HitboxManager.h"
 
 HitboxManager::HitboxManager():
-	ComponentManager("HITBOX")
+	ComponentManager("HITBOX", ComponentType::HITBOX)
 {
 }
 
@@ -18,27 +18,39 @@ glm::vec2 HitboxManager::GetSize(HitboxComponent *hitbox)
 bool HitboxManager::AreColliding(HitboxComponent *lBox, HitboxComponent *rBox)
 {
 	// Code for collission
+	return false;
 }
 
-void HitboxManager::CreateCollisionLists()
+void HitboxManager::CreateCollisionLists( Level* level )
 {
-	// get iter to hitbox Vec
-	auto hitboxVec = this->m_currentLevel->m_components.find(ComponentType::HITBOX);
 
-	if (hitboxVec == this->m_currentLevel->m_components.end())
+	std::vector<Component*> hitboxes;
+
+	// get iter to hitbox Vec
+	for (auto entityIter = level->m_entities.begin();
+		entityIter != level->m_entities.end();
+		++entityIter)
 	{
-		std::cout << "HitboxManager::CreatCollisionLists(): Failed to find Hitbox-Vector!\n";
+		if ((*entityIter)->m_componentFlags & this->m_componentType)
+			hitboxes.push_back(ECRMap[*entityIter]);
+
+	}
+
+
+	if (hitboxes.size() == 0)
+	{
+		std::cout << "HitboxManager::CreatCollisionLists(): Failed to find Hitboxes in level!\n";
 		return;
 	}
 
 	// Go through each module...
-	for (auto hitboxIter1 = hitboxVec->second.begin();
-		hitboxIter1 != hitboxVec->second.end() - 1;
+	for (auto hitboxIter1 = hitboxes.begin();
+		hitboxIter1 != hitboxes.end() - 1;
 		++hitboxIter1)
 	{
 		// ...Then also go through each modules that hitboxIter1 hasn't gone through yet...
 		for (auto hitboxIter2 = hitboxIter1 + 1;
-			hitboxIter2 != hitboxVec->second.end();
+			hitboxIter2 != hitboxes.end();
 			++hitboxIter2)
 		{
 			// Cast the (Hitbox)Modules as actual HitboxModules

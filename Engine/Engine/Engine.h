@@ -19,6 +19,7 @@ public:
 	ManagerTemplate<Component>* GetComponentMangerFromHandle(const std::string &handle);
 	bool						IsValidHandle(const std::string &handle);
 
+	std::map<std::string, ComponentManager*> strCManagerRelation;
 protected:
 	virtual bool onCreate(int a_argc, char* a_argv[]);
 	virtual void onUpdate(float a_deltaTime);
@@ -27,7 +28,7 @@ protected:
 
 	void LinkComponentManager(ComponentManager* pManager);
 
-	std::map<std::string, ManagerTemplate<Component>*> strCManagerRelation;
+	
 
 
 private:

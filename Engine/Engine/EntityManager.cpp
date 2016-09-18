@@ -8,40 +8,45 @@ EntityManager::EntityManager()
 
 }
 
-void EntityManager::AddElement(Entity *tElement)
+Entity* EntityManager::CreateEntity()
 {
-	// GUARD: nullptr ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if (tElement == nullptr ||
-		m_currentLevel == nullptr)
-	{
-		return;
-	}
+	Entity* newEntity = new Entity;
+	m_entities.push_back(newEntity);
 
-	m_currentLevel->m_entities.push_back(tElement);
-
+	return newEntity;
 }
 
-void EntityManager::RemoveElement(Entity * tElement)
+Entity* EntityManager::CreateEntity(std::string &name)
+{
+	Entity* newEntity = new Entity(name);
+	m_entities.push_back(newEntity);
+
+	return newEntity;
+}
+
+// Currently does not destroy the components as well
+void EntityManager::DestroyEntity(Entity *entity)
 {
 	// GUARD: nullptr ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if (tElement == nullptr ||
-		m_currentLevel == nullptr)
-	{
+	if (entity == nullptr)
 		return;
-	}
 
-	// Shortcut
-	auto &entityVec = m_currentLevel->m_entities;
-
-	auto entityIter = entityVec.begin();
-	for (;entityIter != entityVec.end();
+	auto entityIter = this->m_entities.begin();
+	for (;entityIter != this->m_entities.end();
 		++entityIter)
 	{
-		if ((*entityIter) == tElement)
+		if ((*entityIter) == entity)
 		{
+			for (auto compManagerIter = m_pEngine->strCManagerRelation.begin();
+				compManagerIter != m_pEngine->strCManagerRelation.end();
+				++compManagerIter)
+			{
+				(*compManagerIter).second->DestroyComponent(entity);
+			}
+
 			delete (*entityIter);
 			(*entityIter) = nullptr;
-			entityVec.erase(entityIter);
+			this->m_entities.erase(entityIter);
 			return;
 		}
 	}
@@ -116,12 +121,21 @@ Entity *EntityManager::GenerateElement(strVec &entityInstructions)
 
 void EntityManager::OnUpdate()
 {
-	auto entityIter = m_pElements->begin();
-	while (entityIter != m_pElements->end())
+	// Gather list of entities that need to be destroyed
+	std::vector<Entity*> killMe;
+	for(auto entityIter = m_entities.begin();
+		entityIter != m_entities.end();
+		++entityIter)
 	{
 		if ((*entityIter)->m_deathFlag == true)
-			entityIter = m_pElements->erase(entityIter);
-		else
-			++entityIter;
+			killMe.push_back(*entityIter);
+	}
+
+	// Destroy the entities
+	for (auto killIter = killMe.begin();
+		killIter != killMe.end();
+		++killIter)
+	{
+		this->DestroyEntity(*killIter);
 	}
 }

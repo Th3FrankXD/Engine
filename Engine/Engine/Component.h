@@ -22,9 +22,6 @@ struct Component
 	Component(ComponentType type);
 	virtual ~Component();
 
-	// Parent Entity
-	Entity				*m_pEntity;
-
 	// Component Type
 	ComponentType		m_componentType;
 

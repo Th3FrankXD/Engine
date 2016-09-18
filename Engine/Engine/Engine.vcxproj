@@ -122,6 +122,7 @@
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="ExtraFunctional.cpp" />
     <ClCompile Include="HitboxComponent.cpp" />
+    <ClCompile Include="HitboxManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="ExtraFunctional.h" />
     <ClInclude Include="HitboxComponent.h" />
+    <ClInclude Include="HitboxManager.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="ManagerTemplate.h" />
