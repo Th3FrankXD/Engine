@@ -5,9 +5,19 @@ HitboxManager::HitboxManager():
 {
 }
 
+void HitboxManager::SetSize(HitboxComponent * hitbox, glm::vec2 & size)
+{
+	hitbox->m_size = size;
+}
+
+glm::vec2 HitboxManager::GetSize(HitboxComponent *hitbox)
+{
+	return hitbox->m_size;
+}
+
 bool HitboxManager::AreColliding(HitboxComponent *lBox, HitboxComponent *rBox)
 {
-	return false;
+	// Code for collission
 }
 
 void HitboxManager::CreateCollisionLists()

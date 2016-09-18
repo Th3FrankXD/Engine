@@ -6,11 +6,11 @@ struct HitboxManager : ComponentManager
 	HitboxManager();
 
 	// Size
-	void		SetSize(glm::vec2 &size);
-	glm::vec2	GetSize();
+	void		SetSize(HitboxComponent* hitbox, glm::vec2 &size);
+	glm::vec2	GetSize(HitboxComponent* hitbox);
 
 	// Checking
-	bool		IsColliding(HitboxComponent* lBox, HitboxComponent* rBox);
+	bool		AreColliding(HitboxComponent* lBox, HitboxComponent* rBox);
 	void		CreateCollisionLists();
 	void		ClearCollisionLists();
 
