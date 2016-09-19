@@ -37,8 +37,8 @@ void EntityManager::DestroyEntity(Entity *entity)
 	{
 		if ((*entityIter) == entity)
 		{
-			for (auto compManagerIter = m_pEngine->strCManagerRelation.begin();
-				compManagerIter != m_pEngine->strCManagerRelation.end();
+			for (auto compManagerIter = m_pEngine->strToCManagerMap.begin();
+				compManagerIter != m_pEngine->strToCManagerMap.end();
 				++compManagerIter)
 			{
 				(*compManagerIter).second->DestroyComponent(entity);
@@ -111,7 +111,7 @@ Entity *EntityManager::GenerateElement(strVec &entityInstructions)
 			continue;
 
 		// Get the manager
-		ManagerTemplate<Component>* manager = m_pEngine->GetComponentMangerFromHandle(instructioniter->first);
+		ManagerTemplate<Component>* manager = m_pEngine->GetCMangerFromHandle(instructioniter->first);
 		// Give the Manager instructions and generate the Component
 		newEntity->m_pComponents.push_back( manager->GenerateElement(instructioniter->second) );
 	}

@@ -10,12 +10,15 @@ struct ComponentManager : ManagerTemplate<Component>
 	std::string			m_strHandle;
 	ComponentType		m_componentType;
 
-	void				SetComponent(Entity* entity, Component* tElement);
+	bool				HasComponent(Entity* entity);
 	void				DestroyComponent(Component* tElement);
 	void				DestroyComponent(Entity* entity);
+	virtual Component*	CreateComponent(Entity* entity);
 	virtual Component*	GenerateElement(strVec &componentInstructions) = 0;
 	virtual void		OnUpdate() = 0;
 
 	// Entity-Component Relation Map
 	std::map<Entity*, Component*> ECRMap;
+protected:
+	virtual Component*	FabricateComponent() = 0;
 };

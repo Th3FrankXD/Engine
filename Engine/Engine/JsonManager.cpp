@@ -35,6 +35,7 @@ void JsonManager::serializeJson(std::string filePath)
 
 	for (auto& itr : doc.GetObject())
 	{
+		
 		switch (itr.value.GetType())
 		{
 		case 0: // Null

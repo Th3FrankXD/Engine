@@ -23,24 +23,24 @@ Engine::~Engine()
 {
 }
 
-ManagerTemplate<Component>* Engine::GetComponentMangerFromHandle(const std::string & handle)
+ManagerTemplate<Component>* Engine::GetCMangerFromHandle(const std::string & handle)
 {
-	return this->strCManagerRelation[handle];
+	return this->strToCManagerMap[handle];
+}
+
+ManagerTemplate<Component>* Engine::GetCMangerFromType(ComponentType type)
+{
+	return nullptr;
 }
 
 bool Engine::IsValidHandle(const std::string & handle)
 {
-	return (strCManagerRelation.find(handle) != strCManagerRelation.end());
+	return (strToCManagerMap.find(handle) != strToCManagerMap.end());
 }
 
 bool Engine::onCreate(int a_argc, char* a_argv[])
 {
 	m_jsonManager.serializeJson("testmap.json");
-
-	strVec strvec;
-	strvec.push_back("[Player]");
-	strvec.push_back("<TRANSFORM>");
-	strvec.push_back("position: 0, 0");
 
 
 	
@@ -69,7 +69,8 @@ void Engine::LinkComponentManager(ComponentManager* pManager)
 		return;
 
 	// Get string handle
-	this->strCManagerRelation[pManager->m_strHandle] = pManager;
+	this->strToCManagerMap[pManager->m_strHandle] = pManager;
+	this->cTypeToCManagerMap[pManager->m_componentType] = pManager;
 
 	// Set Manager's engine ptr to this
 	pManager->m_pEngine = this;

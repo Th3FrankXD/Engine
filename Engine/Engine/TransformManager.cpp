@@ -76,3 +76,8 @@ float		TransformManager::GetRotation(TranformComponent * transform)
 {
 	return transform->m_rotation;
 }
+
+Component* TransformManager::FabricateComponent()
+{
+	return new TranformComponent;
+}

@@ -23,5 +23,6 @@ struct TransformManager : ComponentManager
 	void		SetRotation(TranformComponent *transform, float rotation);
 	float		GetRotation(TranformComponent *transform);
 
-
+protected:
+	Component*	FabricateComponent() override;
 };

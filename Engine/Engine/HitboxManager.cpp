@@ -33,13 +33,12 @@ void HitboxManager::CreateCollisionLists( Level* level )
 	{
 		if ((*entityIter)->m_componentFlags & this->m_componentType)
 			hitboxes.push_back(ECRMap[*entityIter]);
-
 	}
 
 
 	if (hitboxes.size() == 0)
 	{
-		std::cout << "HitboxManager::CreatCollisionLists(): Failed to find Hitboxes in level!\n";
+		std::cout << "HitboxManager::CreateCollisionLists(): Failed to find Hitboxes in level!\n";
 		return;
 	}
 
@@ -77,4 +76,9 @@ void HitboxManager::CreateCollisionLists( Level* level )
 void HitboxManager::ClearCollisionLists()
 {
 	m_collisionLists.clear();
+}
+
+Component * HitboxManager::FabricateComponent()
+{
+	return new HitboxComponent;
 }

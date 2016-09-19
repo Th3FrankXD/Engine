@@ -9,6 +9,7 @@
 
 class Engine : public NHTV::Application
 {
+	friend EntityManager;
 public:
 	Engine();
 	~Engine();
@@ -16,12 +17,15 @@ public:
 	JsonManager					m_jsonManager;
 	LevelManager				m_levelManager;
 	EntityManager				m_entityManager;
+
 	TransformManager			m_transformManager;
 
-	ManagerTemplate<Component>* GetComponentMangerFromHandle(const std::string &handle);
+
+	ManagerTemplate<Component>* GetCMangerFromHandle(const std::string &handle);
+	ManagerTemplate<Component>* GetCMangerFromType(ComponentType type);
 	bool						IsValidHandle(const std::string &handle);
 
-	std::map<std::string, ComponentManager*> strCManagerRelation;
+	
 protected:
 	virtual bool onCreate(int a_argc, char* a_argv[]);
 	virtual void onUpdate(float a_deltaTime);
@@ -29,7 +33,8 @@ protected:
 	virtual void onDestroy();
 
 	void LinkComponentManager(ComponentManager* pManager);
-
+	std::map<std::string, ComponentManager*> strToCManagerMap;
+	std::map<ComponentType, ComponentManager*> cTypeToCManagerMap;
 	
 
 
